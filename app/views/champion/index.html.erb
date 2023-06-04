@@ -1,0 +1,17 @@
+<!-- All Champions -->
+<div class="container text-center px-4 px-lg-5 mt-5">
+  <div class="row row-cols-1 row-cols-md-5 g-4">
+    <% @champion['data'].each do |champion| %>
+      <div class="col">
+        <div class="card" style="width: 12rem;">
+          <%= image_tag(@heroes+champion[1]['id']+'_0.jpg', class:"card-img-top") %>
+          <div class="card-body">
+            <h5 class="card-title"><%= champion[1]['name'] %></h5>
+            <!-- <p class="card-text"><%= champion[1]['title'] %></p>  -->
+            <a href="#" class="btn btn-primary">More</a>
+          </div>
+        </div><br>
+      </div>
+    <% end %>
+  </div>
+</div>
