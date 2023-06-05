@@ -1,0 +1,39 @@
+<!-- Header -->
+<header>
+  <div class="container text-center px-4 px-lg-5 mt-5">
+    <% @one_champion['data'].each do |champion| %>
+      <div class="card mb-3" style="width: 80%;">
+        <img src="<%= @splash_champion %>" class="card-img-top" alt="">
+        <div class="card-body">
+          <h1 class="feature rounded-3 titulo"><%= champion[1]['title'].upcase %></h1>
+          <h1 class="feature rounded-3 sub_titulo"><%= champion[1]['name'].upcase %></h1>
+          <p class="lead fw-normal text-black-50 mb-0" style="width: 90%; margin-left: 5%; text-align: justify;"><%= champion[1]['lore'] %></p>
+        </div
+        <div class="card" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">HABILIDADES</li>
+          </ul>
+          <br>
+          <div class="row">
+            <% champion[1]['spells'].each do |spells| %>
+              <div class="col">
+                <div class="card" style="width: 11rem;">
+                  <img src="<%= @image_spell+spells['image']['full'] %>" class="card-img-top">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= spells['name'] %></h5>
+                    <p class="card-text"><%= spells['description'] %></p>
+                  </div>
+                </div><br>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</header>
+
+<!-- Section - Champion -->
+<section class="bg-light">
+
+</section>

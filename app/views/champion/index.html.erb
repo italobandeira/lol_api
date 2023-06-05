@@ -1,5 +1,3 @@
-<link data-react-helmet="true" type="text/css" rel="stylesheet" href="https://s.lolstatic.com/awesomefonts/1.0.0/lol-fonts.css">
-
 <!-- Header -->
 <header class="py-5">
   <div class="container px-4 px-lg-5 my-5">
@@ -8,26 +6,28 @@
         <h1 class="titulo">ESCOLHA SEU</h1>
         <h1 class="sub_titulo">CAMPEÃO</h1>
       </strong>
-      <p class="lead fw-normal text-black-50 mb-0" style="font-family: Beaufort for LOL;">Encontre o campeão perfeito para seu estilo de jogo!</p>
+      <p class="lead fw-normal text-black-50 mb-0">Encontre o campeão perfeito para seu estilo de jogo!</p>
     </div>
   </div>
 </header>
 
-<!-- All Champions -->
+<!-- Section - All Champions -->
 <section class="bg-light">
   <div class="container text-center px-4 px-lg-5 mt-5">
     <div class="row row-cols-1 row-cols-md-5 g-4">
-      <% @champion['data'].each do |champion| %>
+      <% @all_champions['data'].each do |champion| %>
         <div class="col">
           <div class="card" style="width: 13rem;">
-            <%= image_tag(@heroes+champion[1]['id']+'_0.jpg', class:"card-img-top") %>
+            <%= image_tag(@image_champions+champion[1]['id']+'_0.jpg', class:"card-img-top") %>
             <div class="card-body">
-              <h5 class="card-title" style="font-family: BeaufortforLOL-Heavy;"><%= champion[1]['name'].upcase %></h5>
-              <%# <a href="#" class="btn btn-primary">More</a> %>
+              <h5 class="card-title" style="font-family: BeaufortforLOL-Heavy;"><%= link_to champion[1]['name'].upcase, "/champion/"+champion[1]['id'] %></h5>
             </div>
-          </div><br>
+          </div>
         </div>
       <% end %>
     </div>
   </div>
 </section>
+
+<!-- Font icons Riot Games -->
+<link data-react-helmet="true" type="text/css" rel="stylesheet" href="https://s.lolstatic.com/awesomefonts/1.0.0/lol-fonts.css">
