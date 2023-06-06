@@ -17,12 +17,12 @@
     <div class="row row-cols-1 row-cols-md-5 g-4">
       <% @all_champions['data'].each do |champion| %>
         <div class="col">
-          <div class="card" style="width: 13rem;">
-            <%= image_tag(@image_champions+champion[1]['id']+'_0.jpg', class:"card-img-top") %>
-            <div class="card-body">
-              <h5 class="card-title" style="font-family: BeaufortforLOL-Heavy;"><%= link_to champion[1]['name'].upcase, "/champion/"+champion[1]['id'] %></h5>
+            <div class="card" style="width: 13rem;">
+              <%= image_tag(@image_champions+champion[1]['id']+'_0.jpg', class:"card-img-top") %>
+              <div class="card-body">
+                <h5 class="card-title" style="font-family: BeaufortforLOL-Heavy;"><%= link_to champion[1]['name'].upcase, "/champion/"+champion[1]['id'], class:"stretched-link" %></h5>
+              </div>
             </div>
-          </div>
         </div>
       <% end %>
     </div>

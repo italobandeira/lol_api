@@ -9,7 +9,7 @@
           <h1 class="feature rounded-3 sub_titulo"><%= champion[1]['name'].upcase %></h1>
           <p class="lead fw-normal text-black-50 mb-0" style="width: 90%; margin-left: 5%; text-align: justify;"><%= champion[1]['lore'] %></p>
         </div
-        <div class="card" style="width: 18rem;">
+        <div class="card">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">HABILIDADES</li>
           </ul>
@@ -17,11 +17,11 @@
           <div class="row">
             <% champion[1]['spells'].each do |spells| %>
               <div class="col">
-                <div class="card" style="width: 11rem;">
+                <div class="card" style="width: 9rem; height: 80%;">
                   <img src="<%= @image_spell+spells['image']['full'] %>" class="card-img-top">
                   <div class="card-body">
-                    <h5 class="card-title"><%= spells['name'] %></h5>
-                    <p class="card-text"><%= spells['description'] %></p>
+                    <h5 class="card-title""><%= spells['name'] %></h5>
+                    <!-- <p class="card-text"><%= spells['description'] %></p> -->
                   </div>
                 </div><br>
               </div>
@@ -32,8 +32,3 @@
     <% end %>
   </div>
 </header>
-
-<!-- Section - Champion -->
-<section class="bg-light">
-
-</section>
