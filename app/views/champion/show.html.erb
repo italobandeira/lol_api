@@ -14,19 +14,21 @@
             <li class="list-group-item">HABILIDADES</li>
           </ul>
           <br>
-          <div class="row">
-            <% champion[1]['spells'].each do |spells| %>
-              <div class="col">
-                <div class="card" style="width: 9rem; height: 80%;">
-                  <img src="<%= @image_spell+spells['image']['full'] %>" class="card-img-top">
-                  <div class="card-body">
-                    <h5 class="card-title""><%= spells['name'] %></h5>
-                    <!-- <p class="card-text"><%= spells['description'] %></p> -->
+          <% champion[1]['spells'].each do |spells| %>
+            <div class="card mb-3" style="max-width: 75%;">
+              <div class="row g-0">
+                  <div class="col-md-3" style="margin-top: 5%;">
+                    <img src="<%= @image_spell+spells['image']['full'] %>" class="img-fluid rounded-start">
                   </div>
-                </div><br>
+                  <div class="col-md-8 mx-auto">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= spells['name'] %></h5>
+                      <p class="card-text" style="text-align: justify;"><%= sanitize(spells['description']) %></p>
+                    </div>
+                  </div>
               </div>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>
