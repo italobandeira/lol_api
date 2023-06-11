@@ -9,18 +9,19 @@
       <p class="lead fw-normal text-black-50 mb-0">Encontre o campeão perfeito para seu estilo de jogo!</p>
     </div>
   </div>
+  <!-- <h1 class="container px-lg-4">CAMPEÃO</h1> -->
 </header>
 
 <!-- Section - All Champions -->
 <section class="bg-light">
-  <div class="container text-center px-4 px-lg-5 mt-5">
+  <div class="container text-center">
     <div class="row row-md-5 g-4">
       <% @all_champions['data'].each do |champion| %>
         <div class="col">
-            <div class="card" style="width: 13rem;">
+            <div class="card">
               <%= image_tag(@image_champions+champion[1]['id']+'_0.jpg', class:"card-img-top") %>
               <div class="card-body">
-                <h5 class="card-title" style="font-family: BeaufortforLOL-Heavy;"><%= link_to champion[1]['name'].upcase, "/champion/"+champion[1]['id'], class:"stretched-link" %></h5>
+                <h5 class="card-title"><%= link_to champion[1]['name'].upcase, "/champion/"+champion[1]['id'], class:"stretched-link" %></h5>
               </div>
             </div>
         </div>
