@@ -1,21 +1,21 @@
 <!-- Header -->
 <header>
-  <div class="container text-center px-4 px-lg-5 mt-5">
+  <div class="container text-center px-4 px-lg-5 py-5 my-5">
     <% @one_champion['data'].each do |champion| %>
       <div class="card mb-3" style="width: 80%;">
-        <img src="<%= @splash_champion %>" class="card-img-top" alt="">
+        <img src="<%= @splash_champion %>" class="card-img-top">
         <div class="card-body">
           <h1 class="feature rounded-3 titulo"><%= champion[1]['title'].upcase %></h1>
           <h1 class="feature rounded-3 sub_titulo"><%= champion[1]['name'].upcase %></h1>
           <p class="lead fw-normal text-black-50 mb-0" style="width: 90%; margin-left: 5%; text-align: justify;"><%= champion[1]['lore'] %></p>
-        </div
-        <div class="card">
+        </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">HABILIDADES</li>
           </ul>
           <br>
+        <div class="mx-auto">
           <% champion[1]['spells'].each do |spells| %>
-            <div class="card mb-3" style="width: 80%;">
+            <div class="card mb-3" style="width: 70%;">
               <div class="col-md-3" style="margin-top: 5%; width: 80%;">
                 <img src="<%= @image_spell+spells['image']['full'] %>" class="img-fluid rounded-start">
               </div>
